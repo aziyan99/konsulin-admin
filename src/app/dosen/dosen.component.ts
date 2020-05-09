@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { KonsulinService } from 'src/app/services/konsulin.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-dosen',
@@ -7,13 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DosenComponent implements OnInit {
 
-  employees: any = [];
+  dosen: any;
+  currentDosen = null;
+  currentIndex = -1;
+  name = '';
 
-  constructor() { }
+  constructor(private konsulinService: KonsulinService) { }
 
   ngOnInit(): void {
+    this.retriveDosen();
+  }
 
-
+  retriveDosen() {
+    this.konsulinService.getAll()
+      .subscribe(data => {
+        this.dosen = data;
+        console.log(data);
+      },
+        error => {
+          console.log(error);
+        });
   }
 
 }
