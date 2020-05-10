@@ -13,6 +13,8 @@ import { AduanComponent } from './aduan/aduan.component';
 import { PengaturanComponent } from './pengaturan/pengaturan.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import { LecturerExpertisesComponent } from 'src/app/lecturer-expertises/lecturer-expertises.component';
+
 
 
 const routes: Routes = [
@@ -26,7 +28,8 @@ const routes: Routes = [
   { path: 'skripsi', component: SkripsiComponent },
   { path: 'aduan', component: AduanComponent },
   { path: 'pengaturan', component: PengaturanComponent },
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile', component: ProfileComponent },
+  { path: 'lecturer-expertises', component: LecturerExpertisesComponent },
 
 ];
 
