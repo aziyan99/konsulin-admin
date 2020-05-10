@@ -16,6 +16,7 @@ import { AduanComponent } from './aduan/aduan.component';
 import { TskripsiComponent } from './tskripsi/tskripsi.component';
 import { SkripsiComponent } from './skripsi/skripsi.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DosenAddComponent } from './dosen-add/dosen-add.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProfileComponent } from './profile/profile.component';
     AduanComponent,
     TskripsiComponent,
     SkripsiComponent,
-    ProfileComponent
+    ProfileComponent,
+    DosenAddComponent
   ],
   imports: [
     BrowserModule,
