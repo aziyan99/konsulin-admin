@@ -6,6 +6,8 @@ import { DosenComponent } from './dosen/dosen.component';
 import { DosenAddComponent } from 'src/app/dosen-add/dosen-add.component';
 
 import { MahasiswaComponent } from './mahasiswa/mahasiswa.component';
+import { MahasiswaAddComponent } from 'src/app/mahasiswa-add/mahasiswa-add.component';
+
 import { GroupComponent } from './group/group.component';
 import { TskripsiComponent } from './tskripsi/tskripsi.component';
 import { SkripsiComponent } from './skripsi/skripsi.component';
@@ -23,6 +25,7 @@ const routes: Routes = [
   { path: 'dosen', component: DosenComponent },
   { path: 'dosen-add', component: DosenAddComponent },
   { path: 'mahasiswa', component: MahasiswaComponent },
+  { path: 'mahasiswa/create', component: MahasiswaAddComponent },
   { path: 'group', component: GroupComponent },
   { path: 'template-skripsi', component: TskripsiComponent },
   { path: 'skripsi', component: SkripsiComponent },
