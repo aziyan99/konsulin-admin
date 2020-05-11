@@ -21,5 +21,13 @@ export class LecturerExpertisesService {
   getById(id) {
     return this.http.get(`${baseUrl}/${id}`);
   }
+
+  update(id, data) {
+    return this.http.patch(`${baseUrl}/${id}`, data);
+  }
+
+  destroy(id) {
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
 }
 

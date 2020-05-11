@@ -15,11 +15,12 @@ export class LecturerExpertisesComponent implements OnInit {
 
   expertise: any;
   editExpertise = {
+    id: '',
     expertise_name: ''
   };
 
   editForm = false;
-  addForm = false;
+  addForm = true;
 
   alert = false;
   alertMessage = '';
@@ -70,13 +71,53 @@ export class LecturerExpertisesComponent implements OnInit {
     this.retriveData();
   }
 
+  clearEditForm() {
+    this.editExpertise = {
+      id: '',
+      expertise_name: ''
+    };
+    this.retriveData();
+  }
+
   setUpdateForm(id) {
     this.service.getById(id)
       .subscribe(data => {
         this.expertise = data;
+        this.editExpertise = {
+          id: this.expertise.id,
+          expertise_name: this.expertise.expertise_name
+        }
         console.log(data);
+        console.log(this.expertise);
+        this.editForm = true;
+        this.addForm = false;
       }, error => {
         console.log(error);
       });
+  }
+
+  updateData(id) {
+    const data = {
+      expertise_name: this.editExpertise.expertise_name
+    };
+    this.service.update(id, data)
+      .subscribe(response => {
+        console.log(response);
+        this.editForm = false;
+        this.addForm = true;
+        this.clearEditForm();
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  deleteData(id) {
+    this.service.destroy(id)
+      .subscribe(response => {
+        console.log(response);
+        this.retriveData();
+      }, error => {
+        console.log(error);
+      })
   }
 }
