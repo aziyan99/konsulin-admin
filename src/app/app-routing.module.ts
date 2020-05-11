@@ -16,6 +16,7 @@ import { PengaturanComponent } from './pengaturan/pengaturan.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { LecturerExpertisesComponent } from 'src/app/lecturer-expertises/lecturer-expertises.component';
+import { MahasiswaEditComponent } from './mahasiswa-edit/mahasiswa-edit.component';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'dosen-add', component: DosenAddComponent },
   { path: 'mahasiswa', component: MahasiswaComponent },
   { path: 'mahasiswa/create', component: MahasiswaAddComponent },
+  { path: 'mahasiswa/:id', component: MahasiswaEditComponent },
   { path: 'group', component: GroupComponent },
   { path: 'template-skripsi', component: TskripsiComponent },
   { path: 'skripsi', component: SkripsiComponent },
