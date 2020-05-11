@@ -19,6 +19,7 @@ import { SkripsiComponent } from './skripsi/skripsi.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DosenAddComponent } from './dosen-add/dosen-add.component';
 import { LecturerExpertisesComponent } from './lecturer-expertises/lecturer-expertises.component';
+import { MahasiswaAddComponent } from './mahasiswa-add/mahasiswa-add.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LecturerExpertisesComponent } from './lecturer-expertises/lecturer-expe
     SkripsiComponent,
     ProfileComponent,
     DosenAddComponent,
-    LecturerExpertisesComponent
+    LecturerExpertisesComponent,
+    MahasiswaAddComponent
   ],
   imports: [
     BrowserModule,
