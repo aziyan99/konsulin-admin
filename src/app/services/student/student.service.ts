@@ -13,4 +13,12 @@ export class StudentService {
   getAll() {
     return this.http.get(baseUrl);
   }
+
+  create(data) {
+    return this.http.post(baseUrl, data);
+  }
+
+  destroy(id) {
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
 }
