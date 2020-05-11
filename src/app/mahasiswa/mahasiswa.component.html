@@ -28,8 +28,9 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <button class="btn btn-primary mb-3"><i class="fas fa-user-plus"></i>&nbsp;&nbsp;Tambah mahasiswa</button>
-          <table id="table" class="table table-bordered table-striped">
+          <a [routerLink]="['/mahasiswa/create']" class="btn btn-primary mb-3"><i
+              class="fas fa-user-plus"></i>&nbsp;&nbsp;Tambah mahasiswa</a>
+          <table class="table table-bordered table-striped">
             <thead>
               <tr>
                 <th>Nim</th>
@@ -40,10 +41,10 @@
             </thead>
             <tbody>
 
-              <tr>
-                <td>170155201010</td>
-                <td>Raja Azian</td>
-                <td>2017</td>
+              <tr *ngFor="let data of students;">
+                <td>{{  data.student.nim }}</td>
+                <td>{{ data.student.name }}</td>
+                <td>{{ data.student.entry_year }}</td>
                 <td>
 
                   <div class="dropdown show">
@@ -55,77 +56,14 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <a class="dropdown-item" href="javascript:;"><i class="fas fa-eye"></i>&nbsp;&nbsp;Detil</a>
                       <a class="dropdown-item" href="javascript:;"><i class="fas fa-edit"></i>&nbsp;&nbsp;Ubah</a>
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-trash"></i>&nbsp;&nbsp;Hapus</a>
-                    </div>
-                  </div>
-
-                </td>
-              </tr>
-              <tr>
-                <td>160155201016</td>
-                <td>Mohamad Farhan Azahry</td>
-                <td>2016</td>
-                <td>
-
-                  <div class="dropdown show">
-                    <a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      &nbsp;&nbsp;Aksi
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-eye"></i>&nbsp;&nbsp;Detil</a>
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-edit"></i>&nbsp;&nbsp;Ubah</a>
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-trash"></i>&nbsp;&nbsp;Hapus</a>
+                      <a class="dropdown-item" href="javascript:;" (click)="deleteData(data.id)"><i
+                          class="fas fa-trash"></i>&nbsp;&nbsp;Hapus</a>
                     </div>
                   </div>
 
                 </td>
               </tr>
 
-              <tr>
-                <td>170155201011</td>
-                <td>Bambang ganteng</td>
-                <td>2017</td>
-                <td>
-
-                  <div class="dropdown show">
-                    <a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      &nbsp;&nbsp;Aksi
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-eye"></i>&nbsp;&nbsp;Detil</a>
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-edit"></i>&nbsp;&nbsp;Ubah</a>
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-trash"></i>&nbsp;&nbsp;Hapus</a>
-                    </div>
-                  </div>
-
-                </td>
-              </tr>
-
-              <tr>
-                <td>170155201002</td>
-                <td>Agus Raja Simamora</td>
-                <td>2017</td>
-                <td>
-
-                  <div class="dropdown show">
-                    <a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      &nbsp;&nbsp;Aksi
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-eye"></i>&nbsp;&nbsp;Detil</a>
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-edit"></i>&nbsp;&nbsp;Ubah</a>
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-trash"></i>&nbsp;&nbsp;Hapus</a>
-                    </div>
-                  </div>
-
-                </td>
-              </tr>
 
 
 
