@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/services/student/student.service';
+import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-mahasiswa',
@@ -21,6 +22,16 @@ export class MahasiswaComponent implements OnInit {
       .subscribe(data => {
         this.students = data;
         console.log(data)
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  deleteData(id) {
+    this.service.destroy(id)
+      .subscribe(response => {
+        console.log(response);
+        this.retriveData();
       }, error => {
         console.log(error);
       });
