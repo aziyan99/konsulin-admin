@@ -1,1 +1,93 @@
-<p>mahasiswa-add works!</p>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Mahasiswa</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item">Mahasiswa</li>
+            <li class="breadcrumb-item active">Create</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Tambah data mahasiswa</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <a [routerLink]="['/mahasiswa']" class="btn btn-secondary mb-3"><i
+              class="fas fa-arrow-left"></i>&nbsp;&nbsp;Kembali</a>
+          &nbsp;&nbsp;
+          <button class="btn btn-primary mb-3" (click)="saveStudent()">
+            <i class="fas fa-save"></i>&nbsp;&nbsp;Simpan
+          </button>
+          &nbsp;&nbsp;
+          <button class="btn btn-warning mb-3">
+            <i class="fas fa-undo"></i>&nbsp;&nbsp;Reset
+          </button>
+          <hr>
+          <div class="row">
+            <div class="col-lg-6 col-md-6">
+
+
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label text-right">Email</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control" [(ngModel)]="newStudent.email">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label text-right">Nim</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control" [(ngModel)]="newStudent.nim">
+                </div>
+              </div>
+
+
+            </div>
+            <div class="col-lg-6 col-md-6">
+
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label text-right">Nama</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control" [(ngModel)]="newStudent.name">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label text-right">Tahun Masuk</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control" [(ngModel)]="newStudent.entry_year">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <hr>
+
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
