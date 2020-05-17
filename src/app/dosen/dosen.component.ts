@@ -27,4 +27,13 @@ export class DosenComponent implements OnInit {
         });
   }
 
+  deleteData(id) {
+    this.service.destroy(id)
+      .subscribe(response => {
+        console.log(response);
+        this.retriveData();
+      }, error => {
+        console.log(error);
+      });
+  }
 }

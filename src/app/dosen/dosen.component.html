@@ -29,24 +29,24 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <a [routerLink]="['/dosen-add']" class="btn btn-primary mb-3"><i
+          <a [routerLink]="['/dosen/create']" class="btn btn-primary mb-3"><i
               class="fas fa-user-plus"></i>&nbsp;&nbsp;Tambah dosen</a>
-          <table id="table" class="table table-bordered table-striped">
+          <table class="table table-bordered table-striped">
             <thead>
               <tr>
                 <th>Nidn</th>
                 <th>Nama</th>
-                <th>Bidang penelitian</th>
+                <th>Id Bidang penelitian</th>
                 <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
 
 
-              <tr>
-                <td>0928087304</td>
-                <td>Tekad Matulatan, S.Sos., S.Kom., M.Inf.Tech</td>
-                <td>-</td>
+              <tr *ngFor="let data of lecturers">
+                <td>{{ data.lecturer.nidn }}</td>
+                <td>{{ data.lecturer.name }}</td>
+                <td>{{ data.lecturer.lecturer_expertise_id }}</td>
                 <td>
 
                   <div class="dropdown show">
@@ -57,8 +57,10 @@
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <a class="dropdown-item" href="javascript:;"><i class="fas fa-eye"></i>&nbsp;&nbsp;Detil</a>
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-edit"></i>&nbsp;&nbsp;Ubah</a>
-                      <a class="dropdown-item" href="javascript:;"><i class="fas fa-trash"></i>&nbsp;&nbsp;Hapus</a>
+                      <a class="dropdown-item" href="javascript:;" [routerLink]="['/dosen', data.id]"><i
+                          class="fas fa-edit"></i>&nbsp;&nbsp;Ubah</a>
+                      <a class="dropdown-item" href="javascript:;" (click)="deleteData(data.id)"><i
+                          class="fas fa-trash"></i>&nbsp;&nbsp;Hapus</a>
                     </div>
                   </div>
 
