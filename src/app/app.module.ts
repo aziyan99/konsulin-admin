@@ -17,6 +17,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './pages/lecturer/index/index.component';
 import { DashboardIndexComponent } from './pages/dashboard/dashboard-index/dashboard-index.component';
+import { LecturerIndexComponent } from './pages/lecturer/lecturer-index/lecturer-index.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DashboardIndexComponent } from './pages/dashboard/dashboard-index/dashb
     MenuComponent,
     FooterComponent,
     IndexComponent,
-    DashboardIndexComponent
+    DashboardIndexComponent,
+    LecturerIndexComponent
   ],
   imports: [
     BrowserModule,
