@@ -3,26 +3,19 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+/**
+ * Routing module
+ */
 import { AppRoutingModule } from './app-routing.module';
+
+/**
+ * Base template
+ */
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DosenComponent } from './dosen/dosen.component';
-import { MahasiswaComponent } from './mahasiswa/mahasiswa.component';
-import { GroupComponent } from './group/group.component';
-import { PengaturanComponent } from './pengaturan/pengaturan.component';
-import { AduanComponent } from './aduan/aduan.component';
-import { TskripsiComponent } from './tskripsi/tskripsi.component';
-import { SkripsiComponent } from './skripsi/skripsi.component';
-import { ProfileComponent } from './profile/profile.component';
-import { DosenAddComponent } from './dosen-add/dosen-add.component';
-import { LecturerExpertisesComponent } from './lecturer-expertises/lecturer-expertises.component';
-import { MahasiswaAddComponent } from './mahasiswa-add/mahasiswa-add.component';
-import { MahasiswaEditComponent } from './mahasiswa-edit/mahasiswa-edit.component';
-import { StudentDetailComponent } from './student-detail/student-detail.component';
-import { DosenEditComponent } from './dosen-edit/dosen-edit.component';
+import { IndexComponent } from './pages/lecturer/index/index.component';
 
 @NgModule({
   declarations: [
@@ -30,21 +23,7 @@ import { DosenEditComponent } from './dosen-edit/dosen-edit.component';
     HeaderComponent,
     MenuComponent,
     FooterComponent,
-    DashboardComponent,
-    DosenComponent,
-    MahasiswaComponent,
-    GroupComponent,
-    PengaturanComponent,
-    AduanComponent,
-    TskripsiComponent,
-    SkripsiComponent,
-    ProfileComponent,
-    DosenAddComponent,
-    LecturerExpertisesComponent,
-    MahasiswaAddComponent,
-    MahasiswaEditComponent,
-    StudentDetailComponent,
-    DosenEditComponent
+    IndexComponent
   ],
   imports: [
     BrowserModule,
