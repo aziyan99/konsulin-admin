@@ -1,1 +1,80 @@
-<p>lecturer-index works!</p>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Dosen</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
+            <li class="breadcrumb-item active">Dosen</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Semua data dosen</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <a [routerLink]="['/dosen/create']" class="btn btn-primary mb-3"><i
+              class="fas fa-user-plus"></i>&nbsp;&nbsp;Tambah dosen</a>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Nidn</th>
+                <th>Nama</th>
+                <th>Id Bidang penelitian</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+
+
+              <tr *ngFor="let data of lecturers">
+                <td>{{ data.lecturer.nidn }}</td>
+                <td>{{ data.lecturer.name }}</td>
+                <td>{{ data.lecturer.lecturer_expertise_id }}</td>
+                <td>
+
+                  <div class="dropdown show">
+                    <a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      &nbsp;&nbsp;Aksi
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <!-- <a class="dropdown-item" href="javascript:;"><i class="fas fa-eye"></i>&nbsp;&nbsp;Detil</a>
+                      <a class="dropdown-item" href="javascript:;" [routerLink]="['/dosen', data.id]"><i
+                          class="fas fa-edit"></i>&nbsp;&nbsp;Ubah</a>
+                      <a class="dropdown-item" href="javascript:;" (click)="deleteData(data.id)"><i
+                          class="fas fa-trash"></i>&nbsp;&nbsp;Hapus</a> -->
+                    </div>
+                  </div>
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
