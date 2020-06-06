@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-loader',
   templateUrl: './loader.component.html',
-  styleUrls: ['./loader.component.css']
+  styleUrls: ['./loader.component.css'],
 })
-export class LoaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class LoaderComponent {
+  color = 'primary';
+  mode = 'indeterminate';
+  value = 50;
 }
