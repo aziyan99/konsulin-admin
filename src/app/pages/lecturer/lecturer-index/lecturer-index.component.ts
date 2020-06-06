@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LecturerIndexComponent implements OnInit {
 
-  constructor() { }
+  lecturers: any;
+
+  constructor(private service: LecturerService) { }
 
   ngOnInit(): void {
+    this.retriveData();
+  }
+
+  retriveData() {
+    this.service.getAll()
+      .subscribe(res => {
+        this.lecturers = res;
+        console.log(this.lecturers);
+      }, error => {
+        console.error();
+      });
   }
 
 }
