@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 /**
@@ -30,6 +30,8 @@ import { LoaderComponent } from './pages/other/loader/loader.component';
  * Spinner(loading progress)
  */
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoaderService } from './services/loader/loader.service';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     HttpClientModule,
     MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
