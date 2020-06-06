@@ -15,9 +15,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
-import { IndexComponent } from './pages/lecturer/index/index.component';
 import { DashboardIndexComponent } from './pages/dashboard/dashboard-index/dashboard-index.component';
 import { LecturerIndexComponent } from './pages/lecturer/lecturer-index/lecturer-index.component';
+import { LecturerCreateComponent } from './pages/lecturer/lecturer-create/lecturer-create.component';
+import { LecturerEditComponent } from './pages/lecturer/lecturer-edit/lecturer-edit.component';
+import { StudentIndexComponent } from './pages/student/student-index/student-index.component';
+import { StudentCreateComponent } from './pages/student/student-create/student-create.component';
+import { StudentEditComponent } from './pages/student/student-edit/student-edit.component';
+import { LecturerExpertisesComponent } from './pages/other/lecturer-expertises/lecturer-expertises.component';
+import { SettingsComponent } from './pages/other/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -25,17 +31,18 @@ import { LecturerIndexComponent } from './pages/lecturer/lecturer-index/lecturer
     HeaderComponent,
     MenuComponent,
     FooterComponent,
-    IndexComponent,
     DashboardIndexComponent,
-    LecturerIndexComponent
+    LecturerIndexComponent,
+    LecturerCreateComponent,
+    LecturerEditComponent,
+    StudentIndexComponent,
+    StudentCreateComponent,
+    StudentEditComponent,
+    LecturerExpertisesComponent,
+    SettingsComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
