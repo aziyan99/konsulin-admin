@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+/**
+ * Service 
+ */
+import { LecturerService } from 'src/app/services/lecturer/lecturer.service';
 
 @Component({
   selector: 'app-lecturer-index',
