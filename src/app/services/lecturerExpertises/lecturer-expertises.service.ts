@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 
-const baseUrl = 'http://localhost:8000/api/v1/lecturer-expertise';
+const baseUrl = 'http://konsulin-rest.herokuapp.com/api/v1/lecturer-expertise';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LecturerExpertisesService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getAll() {
     return this.http.get(baseUrl);
@@ -30,4 +29,3 @@ export class LecturerExpertisesService {
     return this.http.delete(`${baseUrl}/${id}`);
   }
 }
-
