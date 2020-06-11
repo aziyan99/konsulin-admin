@@ -40,7 +40,6 @@ export class LecturerExpertisesComponent implements OnInit {
         this.retriveData();
       },
       (error) => {
-        console.log(error);
         this.successM = false;
         this.failM = true;
       }
@@ -101,5 +100,12 @@ export class LecturerExpertisesComponent implements OnInit {
         this.failM = true;
       }
     );
+  }
+
+  deleteData(id) {
+    var check = confirm('Hapus data ini ?');
+    if (check == true) {
+      this.expertiseService.destroy(id);
+    }
   }
 }

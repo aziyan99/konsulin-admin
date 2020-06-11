@@ -15,13 +15,17 @@ export class LecturerCreateComponent implements OnInit {
     name: '',
     lecturer_expertise_id: '',
   };
+  successM = false;
+  failM = false;
 
   constructor(
     private lecturerExpertisesService: LecturerExpertisesService,
     private lecturerService: LecturerService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getLecturerExpertise();
+  }
 
   getLecturerExpertise() {
     this.lecturerExpertisesService.getAll().subscribe((res) => {
@@ -40,9 +44,13 @@ export class LecturerCreateComponent implements OnInit {
     this.lecturerService.create(data).subscribe(
       (res) => {
         console.log(res);
+        this.clearForm();
+        this.failM = false;
+        this.successM = true;
       },
       (error) => {
-        console.log(error);
+        this.failM = true;
+        this.successM = false;
       }
     );
   }
