@@ -103,7 +103,7 @@ export class LecturerExpertisesComponent implements OnInit {
   }
 
   deleteData(id) {
-    var check = confirm('Hapus data ini ?');
+    let check = confirm('Hapus data ini ?');
     if (check == true) {
       this.expertiseService.destroy(id);
     }

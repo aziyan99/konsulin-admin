@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
  * Service
  */
 import { LecturerService } from 'src/app/services/lecturer/lecturer.service';
-import { LecturerExpertisesService } from 'src/app/services/lecturerExpertises/lecturer-expertises.service';
 
 @Component({
   selector: 'app-lecturer-index',
