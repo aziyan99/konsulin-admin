@@ -32,6 +32,7 @@ import { LoaderComponent } from './pages/other/loader/loader.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoaderService } from './services/loader/loader.service';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { ThesisTemplateComponent } from './pages/other/thesis-template/thesis-template.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     LecturerExpertisesComponent,
     SettingsComponent,
     LoaderComponent,
+    ThesisTemplateComponent,
   ],
   imports: [
     BrowserModule,
