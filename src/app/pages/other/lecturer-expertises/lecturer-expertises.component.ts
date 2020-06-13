@@ -22,7 +22,7 @@ export class LecturerExpertisesComponent implements OnInit {
   createForm = true;
   editForm = false;
 
-  constructor(private expertiseService: LecturerExpertisesService) {}
+  constructor(private expertiseService: LecturerExpertisesService) { }
 
   ngOnInit(): void {
     this.retriveData();
@@ -105,7 +105,13 @@ export class LecturerExpertisesComponent implements OnInit {
   deleteData(id) {
     let check = confirm('Hapus data ini ?');
     if (check == true) {
-      this.expertiseService.destroy(id);
+      this.expertiseService.destroy(id)
+        .subscribe(res => {
+          alert('Data berhasil dihapus');
+          this.ngOnInit();
+        }, error => {
+          alert('Data gagal dihapus');
+        });
     }
   }
 }
