@@ -34,8 +34,13 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <a [routerLink]="['/dosen/create']" class="btn btn-primary mb-3"><i
+          <a [routerLink]="['/dosen/create']" class="btn btn-primary mb-3 mr-3"><i
               class="fas fa-user-plus"></i>&nbsp;&nbsp;Tambah dosen</a>
+
+          <a href="javascript:void(0);" class="btn btn-secondary mb-3" (click)="retriveData()"><i
+              class="fas fa-sync"></i>&nbsp;&nbsp;Reload
+            Data</a>
+
           <app-loader></app-loader>
           <table class="table table-bordered table-hover table-striped">
             <thead>

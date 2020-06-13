@@ -9,6 +9,9 @@ import { DashboardIndexComponent } from './pages/dashboard/dashboard-index/dashb
 import { LecturerIndexComponent } from './pages/lecturer/lecturer-index/lecturer-index.component';
 import { LecturerCreateComponent } from './pages/lecturer/lecturer-create/lecturer-create.component';
 import { LecturerEditComponent } from './pages/lecturer/lecturer-edit/lecturer-edit.component';
+import { StudentIndexComponent } from './pages/student/student-index/student-index.component';
+import { StudentCreateComponent } from './pages/student/student-create/student-create.component';
+import { StudentEditComponent } from './pages/student/student-edit/student-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -16,6 +19,9 @@ const routes: Routes = [
   { path: 'dosen', component: LecturerIndexComponent },
   { path: 'dosen/create', component: LecturerCreateComponent },
   { path: 'dosen/edit/:id', component: LecturerEditComponent },
+  { path: 'mahasiswa', component: StudentIndexComponent },
+  { path: 'mahasiswa/create', component: StudentCreateComponent },
+  { path: 'mahasiswa/edit/:id', component: StudentEditComponent },
   { path: 'bidangpenelitian', component: LecturerExpertisesComponent },
 ];
 
