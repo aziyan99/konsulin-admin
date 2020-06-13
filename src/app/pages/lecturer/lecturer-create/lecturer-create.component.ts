@@ -43,7 +43,6 @@ export class LecturerCreateComponent implements OnInit {
 
     this.lecturerService.create(data).subscribe(
       (res) => {
-        console.log(res);
         this.clearForm();
         this.failM = false;
         this.successM = true;
@@ -51,6 +50,7 @@ export class LecturerCreateComponent implements OnInit {
       (error) => {
         this.failM = true;
         this.successM = false;
+        console.log(error);
       }
     );
   }

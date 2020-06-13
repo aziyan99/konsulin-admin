@@ -22,11 +22,25 @@ export class LecturerIndexComponent implements OnInit {
     this.service.getAll().subscribe(
       (res) => {
         this.lecturers = res;
-        console.log(this.lecturers);
       },
       (error) => {
         console.error();
       }
     );
+  }
+
+  deleteData(id) {
+    var check = confirm('Hapus data ini ?');
+    if (check === true) {
+      this.service.destroy(id).subscribe(
+        (res) => {
+          alert('Data berhasil dihapus');
+          this.ngOnInit();
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
   }
 }
