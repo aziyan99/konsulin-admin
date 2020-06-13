@@ -12,6 +12,7 @@ import { LecturerEditComponent } from './pages/lecturer/lecturer-edit/lecturer-e
 import { StudentIndexComponent } from './pages/student/student-index/student-index.component';
 import { StudentCreateComponent } from './pages/student/student-create/student-create.component';
 import { StudentEditComponent } from './pages/student/student-edit/student-edit.component';
+import { ThesisTemplateComponent } from './pages/other/thesis-template/thesis-template.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -23,10 +24,11 @@ const routes: Routes = [
   { path: 'mahasiswa/create', component: StudentCreateComponent },
   { path: 'mahasiswa/edit/:id', component: StudentEditComponent },
   { path: 'bidangpenelitian', component: LecturerExpertisesComponent },
+  { path: 'templateskripsi', component: ThesisTemplateComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
