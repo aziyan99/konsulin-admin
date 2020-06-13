@@ -6,7 +6,8 @@ const baseUrl = 'http://konsulin-rest.herokuapp.com/api/v1/thesis-template';
 @Injectable({
   providedIn: 'root'
 })
-export class LecturerService {
+
+export class TemplateThesisService {
 
   constructor(private http: HttpClient) { }
 
