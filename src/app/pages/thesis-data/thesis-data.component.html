@@ -1,0 +1,77 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Master Skripsi</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item">
+              <a href="javascript:void(0);">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Master Skripsi</li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <app-loader></app-loader>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-lg-6">
+          <!-- card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Data Tesis Mahasiswa</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div class="alert alert-info" role="alert" *ngIf="renderFailM">Data gagal dirender</div>
+
+              <a href="javascript:void(0);" class="btn btn-secondary mb-3" (click)="retriveData()"><i
+                  class="fas fa-sync"></i>&nbsp;&nbsp;Reload
+                Data</a>
+
+              <table class="table table-striped table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama Mahasiswa</th>
+                    <th>Penelitian</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of thesisData; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ data.student_name }}</td>
+                    <td>{{ data.thesis_title }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+        </div>
+
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

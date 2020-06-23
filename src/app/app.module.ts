@@ -33,6 +33,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoaderService } from './services/loader/loader.service';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { ThesisTemplateComponent } from './pages/other/thesis-template/thesis-template.component';
+import { ConsultGroupComponent } from './pages/consult-group/consult-group.component';
+import { ThesisDataComponent } from './pages/thesis-data/thesis-data.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { ThesisTemplateComponent } from './pages/other/thesis-template/thesis-te
     SettingsComponent,
     LoaderComponent,
     ThesisTemplateComponent,
+    ConsultGroupComponent,
+    ThesisDataComponent,
   ],
   imports: [
     BrowserModule,
