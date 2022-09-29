@@ -1,28 +1,40 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+/**
+ * Routing module
+ */
 import { AppRoutingModule } from './app-routing.module';
+
+/**
+ * Base template
+ */
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DosenComponent } from './dosen/dosen.component';
-import { MahasiswaComponent } from './mahasiswa/mahasiswa.component';
-import { GroupComponent } from './group/group.component';
-import { PengaturanComponent } from './pengaturan/pengaturan.component';
-import { AduanComponent } from './aduan/aduan.component';
-import { TskripsiComponent } from './tskripsi/tskripsi.component';
-import { SkripsiComponent } from './skripsi/skripsi.component';
-import { ProfileComponent } from './profile/profile.component';
-import { DosenAddComponent } from './dosen-add/dosen-add.component';
-import { LecturerExpertisesComponent } from './lecturer-expertises/lecturer-expertises.component';
-import { MahasiswaAddComponent } from './mahasiswa-add/mahasiswa-add.component';
-import { MahasiswaEditComponent } from './mahasiswa-edit/mahasiswa-edit.component';
-import { StudentDetailComponent } from './student-detail/student-detail.component';
-import { DosenEditComponent } from './dosen-edit/dosen-edit.component';
+import { DashboardIndexComponent } from './pages/dashboard/dashboard-index/dashboard-index.component';
+import { LecturerIndexComponent } from './pages/lecturer/lecturer-index/lecturer-index.component';
+import { LecturerCreateComponent } from './pages/lecturer/lecturer-create/lecturer-create.component';
+import { LecturerEditComponent } from './pages/lecturer/lecturer-edit/lecturer-edit.component';
+import { StudentIndexComponent } from './pages/student/student-index/student-index.component';
+import { StudentCreateComponent } from './pages/student/student-create/student-create.component';
+import { StudentEditComponent } from './pages/student/student-edit/student-edit.component';
+import { LecturerExpertisesComponent } from './pages/other/lecturer-expertises/lecturer-expertises.component';
+import { SettingsComponent } from './pages/other/settings/settings.component';
+import { LoaderComponent } from './pages/other/loader/loader.component';
+
+/**
+ * Spinner(loading progress)
+ */
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoaderService } from './services/loader/loader.service';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { ThesisTemplateComponent } from './pages/other/thesis-template/thesis-template.component';
+import { ConsultGroupComponent } from './pages/consult-group/consult-group.component';
+import { ThesisDataComponent } from './pages/thesis-data/thesis-data.component';
 
 @NgModule({
   declarations: [
@@ -30,29 +42,31 @@ import { DosenEditComponent } from './dosen-edit/dosen-edit.component';
     HeaderComponent,
     MenuComponent,
     FooterComponent,
-    DashboardComponent,
-    DosenComponent,
-    MahasiswaComponent,
-    GroupComponent,
-    PengaturanComponent,
-    AduanComponent,
-    TskripsiComponent,
-    SkripsiComponent,
-    ProfileComponent,
-    DosenAddComponent,
+    DashboardIndexComponent,
+    LecturerIndexComponent,
+    LecturerCreateComponent,
+    LecturerEditComponent,
+    StudentIndexComponent,
+    StudentCreateComponent,
+    StudentEditComponent,
     LecturerExpertisesComponent,
-    MahasiswaAddComponent,
-    MahasiswaEditComponent,
-    StudentDetailComponent,
-    DosenEditComponent
+    SettingsComponent,
+    LoaderComponent,
+    ThesisTemplateComponent,
+    ConsultGroupComponent,
+    ThesisDataComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

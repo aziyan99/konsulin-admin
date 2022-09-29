@@ -1,47 +1,38 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { DosenComponent } from './dosen/dosen.component';
-import { DosenAddComponent } from 'src/app/dosen-add/dosen-add.component';
-import { DosenEditComponent } from 'src/app/dosen-edit/dosen-edit.component';
-
-import { MahasiswaComponent } from './mahasiswa/mahasiswa.component';
-import { MahasiswaAddComponent } from 'src/app/mahasiswa-add/mahasiswa-add.component';
-
-import { GroupComponent } from './group/group.component';
-import { TskripsiComponent } from './tskripsi/tskripsi.component';
-import { SkripsiComponent } from './skripsi/skripsi.component';
-import { AduanComponent } from './aduan/aduan.component';
-import { PengaturanComponent } from './pengaturan/pengaturan.component';
-import { ProfileComponent } from './profile/profile.component';
-
-import { LecturerExpertisesComponent } from 'src/app/lecturer-expertises/lecturer-expertises.component';
-import { MahasiswaEditComponent } from './mahasiswa-edit/mahasiswa-edit.component';
-
-
+/**
+ * menu component
+ */
+import { LecturerExpertisesComponent } from './pages/other/lecturer-expertises/lecturer-expertises.component';
+import { DashboardIndexComponent } from './pages/dashboard/dashboard-index/dashboard-index.component';
+import { LecturerIndexComponent } from './pages/lecturer/lecturer-index/lecturer-index.component';
+import { LecturerCreateComponent } from './pages/lecturer/lecturer-create/lecturer-create.component';
+import { LecturerEditComponent } from './pages/lecturer/lecturer-edit/lecturer-edit.component';
+import { StudentIndexComponent } from './pages/student/student-index/student-index.component';
+import { StudentCreateComponent } from './pages/student/student-create/student-create.component';
+import { StudentEditComponent } from './pages/student/student-edit/student-edit.component';
+import { ThesisTemplateComponent } from './pages/other/thesis-template/thesis-template.component';
+import { ConsultGroupComponent } from './pages/consult-group/consult-group.component';
+import { ThesisDataComponent } from './pages/thesis-data/thesis-data.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'dosen', component: DosenComponent },
-  { path: 'dosen/create', component: DosenAddComponent },
-  { path: 'dosen/:id', component: DosenEditComponent },
-  { path: 'mahasiswa', component: MahasiswaComponent },
-  { path: 'mahasiswa/create', component: MahasiswaAddComponent },
-  { path: 'mahasiswa/:id', component: MahasiswaEditComponent },
-  { path: 'group', component: GroupComponent },
-  { path: 'template-skripsi', component: TskripsiComponent },
-  { path: 'skripsi', component: SkripsiComponent },
-  { path: 'aduan', component: AduanComponent },
-  { path: 'pengaturan', component: PengaturanComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'lecturer-expertises', component: LecturerExpertisesComponent },
-
+  { path: 'dashboard', component: DashboardIndexComponent },
+  { path: 'dosen', component: LecturerIndexComponent },
+  { path: 'dosen/create', component: LecturerCreateComponent },
+  { path: 'dosen/edit/:id', component: LecturerEditComponent },
+  { path: 'mahasiswa', component: StudentIndexComponent },
+  { path: 'mahasiswa/create', component: StudentCreateComponent },
+  { path: 'mahasiswa/edit/:id', component: StudentEditComponent },
+  { path: 'bidangpenelitian', component: LecturerExpertisesComponent },
+  { path: 'templateskripsi', component: ThesisTemplateComponent },
+  { path: 'datakonsultasi', component: ConsultGroupComponent },
+  { path: 'datarencanapenelitian', component: ThesisDataComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

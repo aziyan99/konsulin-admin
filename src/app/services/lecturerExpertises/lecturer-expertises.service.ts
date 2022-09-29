@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const baseUrl = 'http://konsulin-rest.herokuapp.com/api/v1/student';
+const baseUrl = 'http://konsulin-rest.herokuapp.com/api/v1/lecturer-expertise';
 
 @Injectable({
   providedIn: 'root',
 })
-export class StudentService {
+export class LecturerExpertisesService {
   constructor(private http: HttpClient) {}
 
   getAll() {
